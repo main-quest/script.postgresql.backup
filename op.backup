@@ -9,7 +9,7 @@ echo "op.backup"
 BACKUP_FILE_NAME="latest.sql"
 OS_USER="postgres"
 OS_USER_GROUP="postgres"
-BACKUP_BUCKET_NAME="${1?Expecting the bucket name as the 1st arg}"
+BACKUP_BUCKET_NAME="${1?Expecting the destination bucket name as the 1st arg}"
 
 wd="$(mktemp -d)"
 cd "$wd"
