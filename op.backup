@@ -25,7 +25,7 @@ local_file="$BACKUP_FILE_NAME"
 echo "Create local backup file from entire cluster via pg_dumpall at $wd/$local_file"
 # Commented: if running on Alpine, sudo is not available and actually not needed
 # sudo -u "$DB_USER" pg_dumpall --file="$local_file"
-su "$OS_USER" -c "cd '$wd' && pg_dumpall --file='$local_file'"
+su "$OS_USER" -c "cd '$wd' && pg_dumpall --clean --if-exists --file='$local_file'"
 
 timestamped_file="$(date -u +"%d-%m-%Y %H-%M-%S").sql"
 
